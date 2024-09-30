@@ -1,7 +1,8 @@
 # mssistemalanchonete : DataBase
 
 Este repositório serve para automatizar o provisionamento de um banco de dados postygres para o [mssistemalanchonete](https://github.com/kelvinlins/mssistemalanchonete.git) utilizando terraform.   
-Através dele pode ser privisionada uma instancia RDS na AWS e uma secret no cluster EKS que é provisionado [aqui](https://github.com/guilherme0541/mslanchonete-infra-eks).
+Através dele pode ser privisionada uma instancia RDS na AWS e uma secret no cluster EKS que é provisionado [aqui](https://github.com/guilherme0541/mslanchonete-infra-eks).   
+Para executar esses scripts você precisa de um bucket s3 que é usado como [backend](https://developer.hashicorp.com/terraform/language/backend) pelo terraform. Antes de executar crie o bucket e configure o backend no `Main.tf`na raiz do projeto.
 
 ## Executando via github-actions
 Para executar os scripts diretamente do github, é necessário criar a variable `AWS_REGION` que é o código da região AWS e  as secrets  `DB_PASS, AWS_ACCESS_KEY_ID e AWS_SECRET_ACCESS_KEY`, respectivamente o password a ser utilizado no DB, o ID e chave de acesso de um usuário AWS com permissões suficientes para criar e alterar os recursos citados acima.   
